@@ -1,0 +1,663 @@
+---
+title: "Next.js: The Complete Guide to React Framework"
+description: "A comprehensive guide to Next.js covering server-side rendering, static site generation, API routes, file-based routing, and modern web development best practices."
+date: "2025-12-02"
+author: "Ankit Gupta"
+---
+
+# Next.js: The Complete Guide to React Framework
+
+Next.js has emerged as one of the most powerful React frameworks for building modern web applications. Created by Vercel, Next.js extends React with features like server-side rendering (SSR), static site generation (SSG), API routes, and more. In this comprehensive guide, we'll explore everything you need to know about Next.js, from basic concepts to advanced patterns.
+
+---
+
+## What is Next.js?
+
+**Next.js** is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications. It's a production-ready framework that provides an excellent developer experience with features like:
+
+- **Hybrid Rendering:** SSR, SSG, and client-side rendering
+- **File-based Routing:** Automatic routing based on file structure
+- **API Routes:** Build backend endpoints within the same project
+- **Built-in Optimization:** Image, font, and script optimization
+- **TypeScript Support:** First-class TypeScript support out of the box
+- **Fast Refresh:** Instant feedback on edits
+
+---
+
+## Why Choose Next.js?
+
+### Traditional React vs Next.js
+
+| Aspect          | Create React App        | Next.js                     |
+| --------------- | ----------------------- | --------------------------- |
+| **Routing**     | Manual (React Router)   | File-based, automatic       |
+| **Rendering**   | Client-side only        | SSR, SSG, ISR, CSR          |
+| **SEO**         | Limited (client-side)   | Excellent (server-rendered) |
+| **Performance** | Good                    | Excellent (optimizations)   |
+| **API Routes**  | Separate backend needed | Built-in API routes         |
+| **Deployment**  | Manual configuration    | Optimized for Vercel        |
+
+---
+
+## Getting Started with Next.js
+
+### Installation
+
+Create a new Next.js application using the following command:
+
+```bash
+npx create-next-app@latest my-app
+cd my-app
+npm run dev
+```
+
+**With TypeScript:**
+
+```bash
+npx create-next-app@latest my-app --typescript
+```
+
+**Project Structure:**
+
+```
+my-app/
+├── app/              # App directory (Next.js 13+)
+├── public/           # Static assets
+├── styles/           # CSS files
+├── next.config.js    # Next.js configuration
+├── package.json
+└── tsconfig.json     # TypeScript config (if using TS)
+```
+
+---
+
+## Core Concepts
+
+### 1. File-Based Routing
+
+Next.js uses a file-system based router where folders define routes.
+
+**App Router (Next.js 13+):**
+
+```
+app/
+├── page.tsx          # Route: /
+├── about/
+│   └── page.tsx      # Route: /about
+├── blog/
+│   ├── page.tsx      # Route: /blog
+│   └── [slug]/
+│       └── page.tsx  # Route: /blog/:slug (dynamic)
+└── api/
+    └── users/
+        └── route.ts  # API: /api/users
+```
+
+**Example Page:**
+
+```tsx
+// app/page.tsx
+export default function Home() {
+  return (
+    <main>
+      <h1>Welcome to Next.js!</h1>
+    </main>
+  );
+}
+```
+
+### 2. Dynamic Routes
+
+Create dynamic routes using square brackets:
+
+```tsx
+// app/blog/[slug]/page.tsx
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  return <h1>Blog Post: {params.slug}</h1>;
+}
+```
+
+**Catch-all Routes:**
+
+```tsx
+// app/docs/[...slug]/page.tsx
+export default function Docs({ params }: { params: { slug: string[] } }) {
+  return <h1>Docs: {params.slug.join("/")}</h1>;
+}
+```
+
+---
+
+## Rendering Strategies
+
+Next.js offers multiple rendering strategies for different use cases.
+
+### 1. Server-Side Rendering (SSR)
+
+Renders pages on each request, perfect for dynamic content.
+
+```tsx
+// app/posts/page.tsx
+async function getPosts() {
+  const res = await fetch("https://api.example.com/posts", {
+    cache: "no-store", // Disable caching for SSR
+  });
+  return res.json();
+}
+
+export default async function Posts() {
+  const posts = await getPosts();
+
+  return (
+    <div>
+      <h1>Latest Posts</h1>
+      {posts.map((post: any) => (
+        <article key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+```
+
+### 2. Static Site Generation (SSG)
+
+Pre-renders pages at build time for maximum performance.
+
+```tsx
+// app/products/[id]/page.tsx
+export async function generateStaticParams() {
+  const products = await fetch("https://api.example.com/products").then((res) =>
+    res.json()
+  );
+
+  return products.map((product: any) => ({
+    id: product.id.toString(),
+  }));
+}
+
+async function getProduct(id: string) {
+  const res = await fetch(`https://api.example.com/products/${id}`);
+  return res.json();
+}
+
+export default async function Product({ params }: { params: { id: string } }) {
+  const product = await getProduct(params.id);
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
+    </div>
+  );
+}
+```
+
+### 3. Incremental Static Regeneration (ISR)
+
+Updates static content after deployment without rebuilding the entire site.
+
+```tsx
+async function getData() {
+  const res = await fetch("https://api.example.com/data", {
+    next: { revalidate: 60 }, // Revalidate every 60 seconds
+  });
+  return res.json();
+}
+
+export default async function Page() {
+  const data = await getData();
+  return <div>{data.content}</div>;
+}
+```
+
+---
+
+## API Routes
+
+Build backend endpoints directly in your Next.js application.
+
+```tsx
+// app/api/users/route.ts
+import { NextResponse } from "next/server";
+
+export async function GET(request: Request) {
+  const users = [
+    { id: 1, name: "John Doe" },
+    { id: 2, name: "Jane Smith" },
+  ];
+
+  return NextResponse.json(users);
+}
+
+export async function POST(request: Request) {
+  const body = await request.json();
+
+  // Process the data (e.g., save to database)
+  const newUser = {
+    id: Date.now(),
+    ...body,
+  };
+
+  return NextResponse.json(newUser, { status: 201 });
+}
+```
+
+**Dynamic API Routes:**
+
+```tsx
+// app/api/users/[id]/route.ts
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  const userId = params.id;
+  // Fetch user from database
+
+  return NextResponse.json({ id: userId, name: "User Name" });
+}
+```
+
+---
+
+## Data Fetching Patterns
+
+### Client-Side Fetching
+
+```tsx
+"use client"; // Mark as client component
+
+import { useState, useEffect } from "react";
+
+export default function ClientComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/data")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+
+  if (!data) return <div>Loading...</div>;
+
+  return <div>{JSON.stringify(data)}</div>;
+}
+```
+
+### Server Components (Default)
+
+```tsx
+// Server component by default - no 'use client' needed
+async function getData() {
+  const res = await fetch("https://api.example.com/data");
+  return res.json();
+}
+
+export default async function ServerComponent() {
+  const data = await getData();
+  return <div>{data.content}</div>;
+}
+```
+
+---
+
+## Image Optimization
+
+Next.js provides automatic image optimization with the `<Image>` component.
+
+```tsx
+import Image from "next/image";
+
+export default function Profile() {
+  return (
+    <div>
+      <Image
+        src="/profile.jpg"
+        alt="Profile picture"
+        width={500}
+        height={500}
+        priority // Load image with high priority
+        placeholder="blur"
+        blurDataURL="/profile-blur.jpg"
+      />
+    </div>
+  );
+}
+```
+
+**Remote Images:**
+
+```tsx
+// next.config.js
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "example.com",
+      },
+    ],
+  },
+};
+```
+
+---
+
+## Metadata and SEO
+
+### Static Metadata
+
+```tsx
+// app/about/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn more about our company",
+  openGraph: {
+    title: "About Us",
+    description: "Learn more about our company",
+    images: ["/og-image.jpg"],
+  },
+};
+
+export default function About() {
+  return <h1>About Page</h1>;
+}
+```
+
+### Dynamic Metadata
+
+```tsx
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const product = await fetch(
+    `https://api.example.com/products/${params.id}`
+  ).then((res) => res.json());
+
+  return {
+    title: product.name,
+    description: product.description,
+  };
+}
+```
+
+---
+
+## Layouts and Templates
+
+### Root Layout
+
+```tsx
+// app/layout.tsx
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <header>
+          <nav>{/* Navigation */}</nav>
+        </header>
+        <main>{children}</main>
+        <footer>{/* Footer */}</footer>
+      </body>
+    </html>
+  );
+}
+```
+
+### Nested Layouts
+
+```tsx
+// app/blog/layout.tsx
+export default function BlogLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="blog-container">
+      <aside>{/* Sidebar */}</aside>
+      <article>{children}</article>
+    </div>
+  );
+}
+```
+
+---
+
+## Middleware
+
+Execute code before a request is completed.
+
+```tsx
+// middleware.ts
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+  // Check authentication
+  const token = request.cookies.get("token");
+
+  if (!token && request.nextUrl.pathname.startsWith("/dashboard")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: "/dashboard/:path*",
+};
+```
+
+---
+
+## Environment Variables
+
+```bash
+# .env.local
+DATABASE_URL=mongodb://localhost:27017/mydb
+NEXT_PUBLIC_API_URL=https://api.example.com
+```
+
+**Usage:**
+
+```tsx
+// Server-side
+const dbUrl = process.env.DATABASE_URL;
+
+// Client-side (must be prefixed with NEXT_PUBLIC_)
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+```
+
+---
+
+## Performance Optimization
+
+### Code Splitting
+
+Next.js automatically splits code by route. Use dynamic imports for additional optimization:
+
+```tsx
+import dynamic from "next/dynamic";
+
+const DynamicComponent = dynamic(() => import("../components/HeavyComponent"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false, // Disable server-side rendering
+});
+
+export default function Page() {
+  return <DynamicComponent />;
+}
+```
+
+### Font Optimization
+
+```tsx
+import { Inter, Roboto } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+---
+
+## Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Docker Deployment
+
+```dockerfile
+# Dockerfile
+FROM node:18-alpine AS base
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## Best Practices
+
+1. **Use Server Components by Default:** Only use client components when needed (interactivity, hooks).
+2. **Optimize Images:** Always use the `<Image>` component.
+3. **Implement Proper Caching:** Use ISR and caching strategies wisely.
+4. **Type Safety:** Use TypeScript for better developer experience.
+5. **SEO Optimization:** Implement proper metadata on all pages.
+6. **Error Handling:** Create error boundaries and proper error pages.
+7. **Environment Variables:** Keep sensitive data in environment variables.
+8. **Code Organization:** Follow consistent folder structure.
+
+---
+
+## Common Patterns
+
+### Authentication Pattern
+
+```tsx
+// lib/auth.ts
+export async function getSession() {
+  // Check session from cookies/database
+}
+
+// app/dashboard/page.tsx
+import { redirect } from "next/navigation";
+import { getSession } from "@/lib/auth";
+
+export default async function Dashboard() {
+  const session = await getSession();
+
+  if (!session) {
+    redirect("/login");
+  }
+
+  return <div>Dashboard Content</div>;
+}
+```
+
+### Loading States
+
+```tsx
+// app/posts/loading.tsx
+export default function Loading() {
+  return <div>Loading posts...</div>;
+}
+```
+
+### Error Handling
+
+```tsx
+// app/posts/error.tsx
+"use client";
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
+  return (
+    <div>
+      <h2>Something went wrong!</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  );
+}
+```
+
+---
+
+## Conclusion
+
+Next.js has revolutionized React development by providing a comprehensive framework that handles routing, rendering, optimization, and deployment seamlessly. Whether you're building a simple blog or a complex enterprise application, Next.js offers the tools and flexibility you need.
+
+**Key Takeaways:**
+
+- Next.js provides multiple rendering strategies (SSR, SSG, ISR)
+- File-based routing simplifies application structure
+- Built-in optimizations improve performance automatically
+- Server components reduce client-side JavaScript
+- Easy deployment with Vercel or self-hosting options
+
+To master Next.js:
+
+- Explore the [official documentation](https://nextjs.org/docs)
+- Build projects using different rendering strategies
+- Stay updated with the latest features and best practices
+
+Happy building with Next.js! 🚀
+
+---
+
+## Further Resources
+
+- [Next.js Official Documentation](https://nextjs.org/docs)
+- [Next.js GitHub Repository](https://github.com/vercel/next.js)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Next.js Examples](https://github.com/vercel/next.js/tree/canary/examples)
