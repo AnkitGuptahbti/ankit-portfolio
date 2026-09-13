@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Contact - Ankit Gupta',
-    description: 'Contact me',
+    description: 'Start a project with Ankit Gupta — full stack engineer for backends, UIs, and products.',
 }
 
 const Contact = () => {

@@ -6,10 +6,11 @@ const paragraphs = [
     'I am a Software Engineer with strong backend expertise, currently working on financial technology products at Paisabazaar through Daffodil Software. My work has involved building and integrating critical financial customer journeys.',
     'Initially, I worked on the Secured Home Loan journey, where I worked on bank integration APIs and lead-push APIs for different banking partners, helping create a seamless customer journey across multiple external banking systems.',
     'Currently, I work on pbmoney.com — Paisabazaar\'s Bonds investment platform — building backend services and integrations for digital KYC, customer verification, bond discovery, and order processing.',
-    'My engineering interests include distributed systems, API design, reliability, security, databases, event-driven architecture, and scalable backend systems.',
+    'I work across the stack — APIs, frontend, reliability, security, and event-driven systems. I look for work I can deliver myself, or with a team when the scope needs it.',
 ]
 
 const expertise = [
+    { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
     { category: 'Backend', items: ['Node.js', 'Express.js', 'Spring Boot', 'Hibernate', 'Socket.IO', 'REST APIs'] },
     { category: 'Languages', items: ['JavaScript', 'TypeScript', 'Java', 'SQL'] },
     { category: 'Databases', items: ['MongoDB', 'MySQL', 'Redis', 'Elasticsearch', 'Cassandra'] },
@@ -20,8 +21,8 @@ const expertise = [
 
 const terminal = [
     { cmd: 'whoami', output: 'ankit-gupta' },
-    { cmd: 'role', output: 'software-engineer' },
-    { cmd: 'focus', output: 'backend + distributed-systems + fintech' },
+    { cmd: 'role', output: 'full-stack-engineer' },
+    { cmd: 'focus', output: 'fullstack + open-to-work' },
     { cmd: 'currently-building', output: 'pbmoney.com — bonds-platform' },
 ]
 
@@ -44,7 +45,7 @@ const AboutPage = () => {
                         transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.2 }}
                         className='text-sm md:text-lg text-neutral-500 dark:text-neutral-400 mt-2'
                     >
-                        Software Engineer · Backend · Distributed Systems · FinTech
+                        Full Stack Engineer · Open to work
                     </motion.p>
                 </div>
 

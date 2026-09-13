@@ -52,7 +52,7 @@ const Projects = () => {
         },
         {
             title: 'JobConnect',
-            description: 'LinkedIn-like professional networking platform designed with a microservices architecture — Auth, User, Post, Feed, Chat, Notification, Job, and Search services behind an API gateway.',
+            description: 'Professional networking platform built as a multi-service product — Auth, User, Post, Feed, Chat, Notification, Job, and Search behind an API gateway.',
             placeholder: {
                 flow: ['Client', 'API Gateway', 'Microservices', 'Kafka / Redis / MongoDB'],
             },
@@ -106,7 +106,7 @@ const Projects = () => {
         <Container className='flex flex-col py-12 gap-10 border-x border-outline relative '>
             <Heading tag='h2' >
 
-                {`I love building things`.split(' ').map((word, index, arr) => (
+                {`Work shipped with teams`.split(' ').map((word, index, arr) => (
                     <motion.span key={index} className='relative inline-block'
                         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

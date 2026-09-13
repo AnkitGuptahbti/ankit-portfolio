@@ -77,7 +77,7 @@ const FeaturedSystems = () => {
             <div className='absolute rounded-full -bottom-1 -right-1 w-2 h-2 z-10 bg-amber-400 [box-shadow:0_0_16px_1px_var(--color-amber-400)]' />
 
             <Heading tag='h2'>
-                {`Systems I've built`.split(' ').map((word, index, arr) => (
+                {`Production systems`.split(' ').map((word, index, arr) => (
                     <motion.span key={index} className='relative inline-block'
                         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
                         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}

@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ankit Gupta - Portfolio",
-  description: "Ankit Gupta - Software Engineer specializing in backend architecture, distributed systems, and FinTech. Building reliable APIs, KYC workflows, and financial integrations.",
+  title: "Ankit Gupta - Full Stack Engineer",
+  description: "Full stack engineer looking for work. I ship reliable backends, clean product UIs, and scalable systems — solo or with a team.",
   icons: {
     icon: "/images/profile/newimage.png",
     apple: "/apple-icon.png",

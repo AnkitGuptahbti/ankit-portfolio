@@ -13,9 +13,9 @@ const CTA = () => {
                     animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                     transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.3 }}
                     viewport={{ once: true }}
-                    className='text-center text-sm md:text-base text-neutral-500 dark:text-neutral-400'>&quot;Building reliable systems. Open to interesting backend engineering opportunities.&quot;</motion.p>
+                    className='text-center text-sm md:text-base text-neutral-500 dark:text-neutral-400'>&quot;Looking for work I can own end to end — solo, or with a team if the project needs it.&quot;</motion.p>
                 <Button tag='link' href='/contact' variant='primary' size='sm' className='rounded-md font-medium relative z-10'>
-                    Get in touch
+                    Start a project
                     <span className="absolute -bottom-px left-3  h-px w-[calc(100%-1.5rem)] bg-linear-to-r from-neutral-400/0 via-amber-400/90 to-neutral-400/0 transition-opacity duration-500 group-hover:opacity-60"></span>
                 </Button>
 

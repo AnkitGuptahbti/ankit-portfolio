@@ -11,7 +11,7 @@ const ContactHero = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.1 }}
                 viewport={{ once: true }}
                 className='text-2xl md:text-4xl font-bold'>
-                Let&apos;s Connect
+                Let&apos;s work together
             </motion.h1>
             <motion.p
                 initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
@@ -19,7 +19,7 @@ const ContactHero = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.3 }}
                 viewport={{ once: true }}
                 className='text-sm md:text-lg text-neutral-500 dark:text-neutral-400 mt-2'>
-                Building reliable systems. Open to interesting backend engineering opportunities.
+                Looking for work. I can build it myself, or work with a team — backends, UIs, and end-to-end products.
             </motion.p>
         </Container>
     )

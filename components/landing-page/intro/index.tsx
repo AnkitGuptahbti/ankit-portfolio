@@ -72,7 +72,7 @@ const Intro = () => {
                                 <div className="text-xs font-medium text-neutral-900 dark:text-neutral-50 truncate flex items-center gap-1">
                                     <div className="w-2 h-2 bg-neutral-900 dark:bg-neutral-50 rounded-full" />
                                     Gurugram, India</div>
-                                <p className='text-xs'>Backend • Distributed Systems • FinTech</p>
+                                <p className='text-xs'>Full Stack • Open to work</p>
                             </div>
                         </div>
                         <div className="absolute top-4 -left-1 w-2 h-2 bg-neutral-200 dark:bg-neutral-800 border-l border-b border-border rotate-45 md:-left-1 sm:left-[248px]"></div>
@@ -86,7 +86,7 @@ const Intro = () => {
                 viewport={{ once: true }}
                 className='text-2xl md:text-4xl font-bold mt-10'>
                 Hi, I&apos;m Ankit  - <span className="moving-gradient-text">
-                    Software Engineer
+                    Full Stack Engineer
                 </span>
             </motion.h1>
             <motion.p
@@ -95,7 +95,7 @@ const Intro = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.3 }}
                 viewport={{ once: true }}
                 className='text-sm md:text-lg text-neutral-700 dark:text-neutral-300 mt-2'>
-                I&apos;m a full stack engineer who builds reliable backends, clean UIs, and scalable FinTech workflows.
+                I take on work and ship it myself — or with a team when the project needs it. Reliable backends, clean product UIs, and scalable systems across domains.
             </motion.p>
             <motion.div
                 initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
@@ -104,7 +104,7 @@ const Intro = () => {
                 viewport={{ once: true }}
                 className='flex items-center gap-4 mt-6'>
                 <Button href='/contact' tag='link' variant='primary' size='sm' className='flex items-center gap-2 rounded-lg group relative'>
-                    Get in touch
+                    Start a project
                 </Button>
                 <Button
                     onClick={() => {
