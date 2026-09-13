@@ -1,5 +1,5 @@
 'use client'
-import { DockerIcon, ExpressIcon, KafkaIcon, MongoDBIcon, NextIcon, NodeJSIcon, QzTrayIcon, ReactQueryIcon, RedisIcon, SocketIoIcon, TailwindIcon, TypeScriptIcon } from '@/vectors/icons'
+import { DockerIcon, ExpressIcon, KafkaIcon, MongoDBIcon, MySQLIcon, NodeJSIcon, RedisIcon, SocketIoIcon, TypeScriptIcon } from '@/vectors/icons'
 import { motion } from 'motion/react'
 import Container from '../../ui/Container'
 import Heading from '../../ui/Heading'
@@ -8,52 +8,47 @@ import ProjectCard from '../../common/project-card'
 const Projects = () => {
     const projects = [
         {
-            title: 'Table Mitra',
-            description: 'Table Mitra is a platform that allows you to manage your restaurant table reservations and orders.',
-            image: '/images/projects/table-mitra.webp',
+            title: 'PB Money',
+            description: 'Bonds investment platform I currently work on — digital KYC, bond discovery, and investment order processing.',
+            image: '/images/projects/pbmoney.png',
             techStack: [
                 {
-                    name: "Next.js",
-                    icon: <NextIcon className="size-4" />,
-                    link: "https://www.nextjs.org",
+                    name: 'TypeScript',
+                    icon: <TypeScriptIcon className='size-4' />,
+                    link: 'https://www.typescriptlang.org',
                 },
                 {
-                    name: "Tailwind CSS",
-                    icon: <TailwindIcon className="size-4" />,
-                    link: "https://www.tailwindcss.com",
+                    name: 'Node.js',
+                    icon: <NodeJSIcon className='size-4' />,
+                    link: 'https://nodejs.org',
                 },
                 {
-                    name: "React Query",
-                    icon: <ReactQueryIcon className="size-4" />,
-                    link: "https://react-query.tanstack.com/",
+                    name: 'Express',
+                    icon: <ExpressIcon className='size-4' />,
+                    link: 'https://expressjs.com/',
                 },
                 {
-                    name: "Socket.io",
-                    icon: <SocketIoIcon className="size-4" />,
-                    link: "https://socket.io/",
+                    name: 'MongoDB',
+                    icon: <MongoDBIcon className='size-4' />,
+                    link: 'https://www.mongodb.com/',
                 },
                 {
-                    name: "QZ Tray",
-                    icon: <QzTrayIcon className="size-4" />,
-                    link: "https://qztray.com/",
+                    name: 'MySQL',
+                    icon: <MySQLIcon className='size-4' />,
+                    link: 'https://www.mysql.com',
                 },
                 {
-                    name: "express",
-                    icon: <ExpressIcon className="size-4" />,
-                    link: "https://expressjs.com/",
+                    name: 'Redis',
+                    icon: <RedisIcon className='size-4' />,
+                    link: 'https://redis.io/',
                 },
                 {
-                    name: "MongoDB",
-                    icon: <MongoDBIcon className="size-4" />,
-                    link: "https://www.mongodb.com/",
-                },
-                {
-                    name: "Redis",
-                    icon: <RedisIcon className="size-4" />,
-                    link: "https://redis.io/",
+                    name: 'Kafka',
+                    icon: <KafkaIcon className='size-4' />,
+                    link: 'https://kafka.apache.org/',
                 },
             ],
-            link: 'https://tablemitra.com'
+            link: 'https://pbmoney.com'
         },
         {
             title: 'JobConnect',

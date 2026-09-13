@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 const paragraphs = [
     'I am a Software Engineer with strong backend expertise, currently working on financial technology products at Paisabazaar through Daffodil Software. My work has involved building and integrating critical financial customer journeys.',
     'Initially, I worked on the Secured Home Loan journey, where I worked on bank integration APIs and lead-push APIs for different banking partners, helping create a seamless customer journey across multiple external banking systems.',
-    'Currently, I work on the Bonds investment platform, building backend services and integrations involved in digital KYC, customer verification, bond discovery, investment workflows, and order processing.',
+    'Currently, I work on pbmoney.com — Paisabazaar\'s Bonds investment platform — building backend services and integrations for digital KYC, customer verification, bond discovery, and order processing.',
     'My engineering interests include distributed systems, API design, reliability, security, databases, event-driven architecture, and scalable backend systems.',
 ]
 
@@ -22,7 +22,7 @@ const terminal = [
     { cmd: 'whoami', output: 'ankit-gupta' },
     { cmd: 'role', output: 'software-engineer' },
     { cmd: 'focus', output: 'backend + distributed-systems + fintech' },
-    { cmd: 'currently-building', output: 'financial-workflows' },
+    { cmd: 'currently-building', output: 'pbmoney.com — bonds-platform' },
 ]
 
 const AboutPage = () => {

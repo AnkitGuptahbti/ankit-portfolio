@@ -109,7 +109,7 @@ const Navbar = () => {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                         className='relative flex items-center rounded-full overflow-hidden w-10 h-10 bg-[#FFD60A] shrink-0 transition-all duration-300'>
-                        <Image src='/images/profile/newimage.png' alt='Ankit Gupta' width={80} height={80} className='w-10 h-10 object-cover object-[50%_10%] scale-[1.55] origin-center' />
+                        <Image src='/images/profile/newimage.png' alt='Ankit Gupta' width={80} height={80} className='w-10 h-10 object-cover object-[50%_6%] scale-[2.3] origin-center' />
                         <motion.span
                             key={isHovered ? '1' : '2'}
                             initial={{ left: '-20%' }}

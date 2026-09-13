@@ -49,7 +49,7 @@ export const experienceData = [
             },
         ],
         points: [
-            "Currently building backend services and integrations for Paisabazaar's Bonds investment platform — digital KYC, customer verification, bond discovery, and investment order processing.",
+            "Currently building backend services and integrations for pbmoney.com — Paisabazaar's Bonds investment platform — digital KYC, customer verification, bond discovery, and investment order processing.",
             "Built and owned backend components of an end-to-end digital KYC and onboarding pipeline: PAN verification, Aadhaar authentication, liveness detection, bank account verification, Demat verification, eSign, and AOF generation.",
             "Designed the Bonds Vendor microservice as a centralized orchestration layer, abstracting multiple third-party financial systems behind standardized APIs and business workflows.",
             "Implemented encrypted data exchange, consent-driven verification, authentication, transaction state management, and failure recovery for audit-ready financial workflows.",

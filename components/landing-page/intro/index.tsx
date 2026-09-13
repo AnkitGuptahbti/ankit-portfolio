@@ -53,7 +53,7 @@ const Intro = () => {
                         alt='Ankit Gupta'
                         width={224}
                         height={224}
-                        className='w-28 h-28 rounded-full object-cover object-[50%_12%] scale-[1.45] origin-center transition-all duration-300'
+                        className='w-28 h-28 rounded-full object-cover object-[50%_8%] scale-[2.15] origin-center transition-all duration-300'
                     />
                     <motion.span
                         key={animationKey}
@@ -95,7 +95,7 @@ const Intro = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.3 }}
                 viewport={{ once: true }}
                 className='text-sm md:text-lg text-neutral-700 dark:text-neutral-300 mt-2'>
-                I&apos;m a full stack engineer who builds reliable backend systems, clean product UIs, secure third party integrations, and scalable financial workflows. I work end-to-end across APIs, authentication, distributed systems, and frontend — with a focus on FinTech.
+                I&apos;m a full stack engineer who builds reliable backends, clean UIs, and scalable FinTech workflows.
             </motion.p>
             <motion.div
                 initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
