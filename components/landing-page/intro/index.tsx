@@ -53,7 +53,7 @@ const Intro = () => {
                         alt='Ankit Gupta'
                         width={224}
                         height={224}
-                        className='w-28 h-28 rounded-full object-cover object-[50%_8%] scale-[2.15] origin-center transition-all duration-300'
+                        className='w-28 h-28 rounded-full object-cover object-[50%_20%] scale-[1.55] origin-center transition-all duration-300'
                     />
                     <motion.span
                         key={animationKey}
