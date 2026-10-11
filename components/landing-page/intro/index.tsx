@@ -21,12 +21,12 @@ const Intro = () => {
             icon: <LinkedinIcon className='size-5  transition-all duration-300' />
         },
         {
-            href: 'https://leetcode.com/u/ankitcodex/',
+            href: 'https://leetcode.com/u/skjdncwiue/',
             tooltip: 'LeetCode',
             icon: <Code2 className='size-5 transition-all duration-300' />
         },
         {
-            href: 'https://www.geeksforgeeks.org/user/ankitcodex/',
+            href: 'https://www.geeksforgeeks.org/profile/ankitgupta92368892',
             tooltip: 'GeeksforGeeks',
             icon: <Braces className='size-5 transition-all duration-300' />
         },
