@@ -3,9 +3,9 @@ import Container from '@/components/ui/Container'
 import { motion } from 'motion/react'
 
 const paragraphs = [
-    'I am a Software Engineer with strong backend expertise, currently working on financial technology products at Paisabazaar through Daffodil Software. My work has involved building and integrating critical financial customer journeys.',
-    'Initially, I worked on the Secured Home Loan journey, where I worked on bank integration APIs and lead-push APIs for different banking partners, helping create a seamless customer journey across multiple external banking systems.',
-    'Currently, I work on pbmoney.com — Paisabazaar\'s Bonds investment platform — building backend services and integrations for digital KYC, customer verification, bond discovery, and order processing.',
+    'I am a Software Engineer experienced in building scalable backend systems, fintech applications, and high-performance APIs, with expertise in microservices, third-party integrations, and distributed systems. I work at Paisabazaar (PB Fintech) through Daffodil Software.',
+    'I built the Bonds Identity microservice as the sole developer — 50+ REST APIs for paperless KYC supporting 5,000+ KYCs/day — and cut PAN-to-Aadhaar drop-off from 40% to 10% and bank-verification drop-off from 25% to 15%.',
+    'I also designed the Bonds Vendor microservice, a centralized gateway for 20+ third-party integrations (99+ APIs), plus a multi-tenant KYC engine with vendor failover and a Redis Streams event pipeline for customer journey events.',
     'I work across the stack — APIs, frontend, reliability, security, and event-driven systems. I look for work I can deliver myself, or with a team when the scope needs it.',
 ]
 

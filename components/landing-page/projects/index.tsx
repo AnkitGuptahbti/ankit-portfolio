@@ -9,7 +9,7 @@ const Projects = () => {
     const projects = [
         {
             title: 'PB Money',
-            description: 'Bonds investment platform I currently work on — digital KYC, bond discovery, and investment order processing.',
+            description: 'Bonds investment platform at Paisabazaar — I built the Identity microservice (50+ KYC APIs, 5,000+ KYCs/day) and the Vendor gateway for 20+ third-party integrations.',
             image: '/images/projects/pbmoney.png',
             techStack: [
                 {

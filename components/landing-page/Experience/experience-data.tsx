@@ -49,12 +49,14 @@ export const experienceData = [
             },
         ],
         points: [
-            "Currently building backend services and integrations for pbmoney.com — Paisabazaar's Bonds investment platform — digital KYC, customer verification, bond discovery, and investment order processing.",
-            "Built and owned backend components of an end-to-end digital KYC and onboarding pipeline: PAN verification, Aadhaar authentication, liveness detection, bank account verification, Demat verification, eSign, and AOF generation.",
-            "Designed the Bonds Vendor microservice as a centralized orchestration layer, abstracting multiple third-party financial systems behind standardized APIs and business workflows.",
-            "Implemented encrypted data exchange, consent-driven verification, authentication, transaction state management, and failure recovery for audit-ready financial workflows.",
-            "Designed resilient third-party integrations using retry strategies, failure classification, controlled fallbacks, and deterministic transaction states.",
-            "Previously worked on the Secured Home Loan journey — bank integration APIs and lead-push APIs for multiple banking partners, with partner-specific request/response transformation behind unified backend APIs.",
+            "Built the Bonds Identity microservice as the sole developer, delivering 50+ REST APIs for paperless KYC and supporting 5,000+ KYCs/day (1.5 lakh+/month).",
+            "Reduced PAN-to-Aadhaar journey drop-off from 40% to 10% by pre-fetching verified KRA data and applicant photos, letting eligible users bypass DigiLocker.",
+            "Reduced bank-verification drop-off from 25% to 15% with retry mechanisms and cancelled-cheque uploads using OCR-based account number and IFSC extraction.",
+            "Architected a config-driven, multi-tenant KYC engine with tenant routing and data isolation, enabling partner onboarding without per-partner code changes.",
+            "Unified Digio and HyperVerge integrations behind a single abstraction layer with weighted traffic distribution, per-API vendor locks, and automatic failover across 6 verification services.",
+            "Designed the Bonds Vendor microservice as a centralized gateway for 20+ third-party integrations (99+ APIs) spanning bond discovery, KYC/KRA, NSE onboarding, payments, and AOF generation, with Redis-cached authentication, encrypted payloads, and per-call audit logging.",
+            "Built an asynchronous Python (FastAPI) face-extraction worker using Redis queues, InsightFace, and OCR to extract applicant photos from KRA PDFs, offloading CPU-intensive work from Node.js services via streamed uploads and async job polling.",
+            "Implemented a reliable event pipeline using Redis Streams and consumer groups, with exponential-backoff retries and stalled-message recovery, delivering 20+ customer journey events to the marketing automation platform.",
         ],
         techStack: [
             {
@@ -129,9 +131,8 @@ export const experienceData = [
             },
         ],
         points: [
-            "Designed REST APIs using Node.js, Express.js, and MongoDB for a permission-first asset management system.",
-            "Implemented scalable RBAC using JWT authentication with a focus on auditability, traceability, and access isolation.",
-            "Worked on asset lifecycle management using MongoDB schemas, indexing, and aggregation pipelines.",
+            "Built REST APIs with Node.js, Express.js, and MongoDB for an asset management system with scalable RBAC and JWT authentication.",
+            "Optimized asset lifecycle tracking using MongoDB indexing and aggregation pipelines, improving auditability and access isolation.",
         ],
         techStack: [
             {
