@@ -3,19 +3,19 @@ import Container from '@/components/ui/Container'
 import { motion } from 'motion/react'
 
 const paragraphs = [
-    'I am a Software Engineer experienced in building scalable backend systems, fintech applications, and high-performance APIs, with expertise in microservices, third-party integrations, and distributed systems. I work at Paisabazaar (PB Fintech) through Daffodil Software.',
+    'I am a Software Engineer with 1.5+ years of backend experience in Node.js, TypeScript, MySQL, Redis, and microservices, specializing in secure third-party API integrations, fault-tolerant systems, and high-reliability financial workflows. I work at Paisabazaar (PB Fintech) through Daffodil Software.',
     'I built the Bonds Identity microservice as the sole developer — 50+ REST APIs for paperless KYC supporting 5,000+ KYCs/day — and cut PAN-to-Aadhaar drop-off from 40% to 10% and bank-verification drop-off from 25% to 15%.',
-    'I also designed the Bonds Vendor microservice, a centralized gateway for 20+ third-party integrations (99+ APIs), plus a multi-tenant KYC engine with vendor failover and a Redis Streams event pipeline for customer journey events.',
+    'I also designed the Bonds Vendor microservice, a centralized gateway for 20+ third-party integrations (99+ APIs), plus a multi-tenant KYC engine, envelope encryption with HMAC hashes that removed plaintext PII from 20 lakh+ records with zero downtime, and a Redis Streams event pipeline for customer journey events.',
     'I work across the stack — APIs, frontend, reliability, security, and event-driven systems. I look for work I can deliver myself, or with a team when the scope needs it.',
 ]
 
 const expertise = [
     { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Node.js', 'Express.js', 'Spring Boot', 'Hibernate', 'Socket.IO', 'REST APIs'] },
-    { category: 'Languages', items: ['JavaScript', 'TypeScript', 'Java', 'SQL'] },
+    { category: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs', 'API Integration', 'System Design'] },
+    { category: 'Languages', items: ['JavaScript', 'TypeScript', 'Java 8+', 'SQL'] },
     { category: 'Databases', items: ['MongoDB', 'MySQL', 'Redis', 'Elasticsearch', 'Cassandra'] },
-    { category: 'Distributed Systems', items: ['Apache Kafka', 'Microservices', 'Event-driven architecture', 'Caching', 'Circuit breakers', 'Rate limiting'] },
-    { category: 'Security', items: ['JWT', 'OAuth', 'RBAC', 'AES-256', 'RSA', 'HMAC', 'bcrypt'] },
+    { category: 'Distributed Systems', items: ['Apache Kafka', 'Redis Streams', 'Microservices', 'Event-driven architecture', 'Caching', 'Circuit breakers', 'Rate limiting'] },
+    { category: 'Security', items: ['JWT', 'OAuth', 'RBAC', 'AES-256', 'RSA', 'HMAC', 'bcrypt', 'Format-Preserving Encryption', 'PII Protection'] },
     { category: 'Fundamentals', items: ['Data Structures', 'Algorithms', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'] },
 ]
 

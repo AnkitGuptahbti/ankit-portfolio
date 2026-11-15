@@ -52,7 +52,7 @@ const Projects = () => {
         },
         {
             title: 'JobConnect',
-            description: 'Professional networking platform built as a multi-service product — Auth, User, Post, Feed, Chat, Notification, Job, and Search behind an API gateway.',
+            description: 'Professional networking platform built as a multi-service product — Auth, User, Post, Feed, Chat, Notification, Job, and Search behind an API gateway with JWT auth, rate limiting, and circuit breakers, plus a RAG-based Generative AI career assistant (OpenAI embeddings, MongoDB Atlas Vector Search).',
             placeholder: {
                 flow: ['Client', 'API Gateway', 'Microservices', 'Kafka / Redis / MongoDB'],
             },
